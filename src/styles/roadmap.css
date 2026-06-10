@@ -1,0 +1,340 @@
+/* Roadmap Page */
+.roadmap-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Header */
+.rm-header {
+  border-left: 3px solid var(--accent);
+  padding-left: 24px;
+  margin-bottom: 40px;
+}
+.rm-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+.rm-title {
+  font-family: var(--display);
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 0.95;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+.rm-tagline {
+  color: var(--accent);
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+.rm-overview {
+  color: var(--text-dim);
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.stat-card {
+  background: rgba(255,77,0,0.05);
+  border: 1px solid rgba(255,77,0,0.18);
+  padding: 16px;
+  text-align: center;
+}
+.stat-label {
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 16px;
+  font-family: var(--font);
+  font-size: 12px;
+  color: var(--text-faint);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+  margin-bottom: -1px;
+}
+.tab:hover { color: var(--text-dim); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Tab Content */
+.tab-content { animation: fadeIn 0.35s ease; }
+
+/* Shared Card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+  margin-bottom: 12px;
+}
+.card-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+.card-text.small { font-size: 12px; margin-top: 8px; }
+
+.highlight-card {
+  background: rgba(255,77,0,0.04);
+  border-color: rgba(255,77,0,0.2);
+}
+
+.dim-card { opacity: 0.55; }
+
+/* Section head */
+.section-head {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 24px 0 10px;
+}
+.section-head.dim { color: var(--text-faint); }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tag {
+  display: inline-block;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(255,77,0,0.25);
+  padding: 4px 12px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* List items */
+.list-item {
+  font-size: 13px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.list-item:last-child { border-bottom: none; }
+.arrow { color: var(--accent); margin-right: 10px; }
+.cross { color: #ff3b3b; margin-right: 10px; }
+
+/* Two col */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+@media (max-width: 540px) { .two-col { grid-template-columns: 1fr; } }
+
+/* Big number */
+.big-num {
+  font-family: var(--display);
+  font-size: 28px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
+
+/* Timeline */
+.timeline {}
+.milestone {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.ms-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+.ms-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ms-line {
+  width: 1px;
+  flex-grow: 1;
+  background: rgba(255,77,0,0.25);
+  min-height: 20px;
+  margin: 4px 0;
+}
+.ms-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px 18px;
+  flex: 1;
+  margin-bottom: 8px;
+}
+.ms-week {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.ms-task {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* KPI */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.kpi-card {
+  background: rgba(255,77,0,0.04);
+  border: 1px solid rgba(255,77,0,0.15);
+  padding: 14px;
+  text-align: center;
+}
+.kpi-metric { font-size: 10px; color: var(--text-faint); margin-bottom: 6px; letter-spacing: 1px; }
+.kpi-target { font-size: 18px; color: var(--accent); font-family: var(--display); letter-spacing: 1px; }
+.kpi-time { font-size: 10px; color: var(--text-faint); margin-top: 4px; }
+
+/* Costs */
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px;
+  gap: 12px;
+}
+.cost-row:last-child { border-bottom: none; }
+.cost-item { color: var(--text-dim); }
+.cost-note { color: var(--text-faint); font-size: 11px; }
+.cost-val { color: var(--accent); flex-shrink: 0; }
+
+/* Customers */
+.icp-cac { margin-top: 12px; font-size: 12px; }
+.accent-text { color: var(--accent); }
+
+/* Marketing */
+.channel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.channel-name { font-size: 14px; font-weight: 500; margin-right: 10px; }
+.priority {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.priority.high { background: rgba(255,77,0,0.2); color: var(--accent); border: 1px solid rgba(255,77,0,0.3); }
+.priority.medium { background: rgba(255,200,0,0.1); color: #ffcc00; border: 1px solid rgba(255,200,0,0.2); }
+.priority.low { background: rgba(255,255,255,0.05); color: var(--text-faint); border: 1px solid var(--border); }
+
+/* Revenue */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 12px 0 20px;
+}
+.plan-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+.plan-name {
+  font-family: var(--display);
+  font-size: 22px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.plan-price { font-size: 20px; font-weight: 500; margin-bottom: 10px; }
+.plan-features { font-size: 12px; color: var(--text-dim); line-height: 1.6; margin-bottom: 8px; }
+.plan-target { font-size: 11px; color: var(--text-faint); }
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.proj-card {
+  background: rgba(255,77,0,0.04);
+  border: 1px solid rgba(255,77,0,0.15);
+  padding: 16px;
+  text-align: center;
+}
+.proj-month { font-size: 10px; color: var(--text-faint); margin-bottom: 6px; letter-spacing: 1px; }
+.proj-mrr { font-family: var(--display); font-size: 24px; color: var(--accent); letter-spacing: 1px; }
+.proj-users { font-size: 12px; color: var(--text-dim); margin-top: 4px; }
+.proj-note { font-size: 10px; color: var(--text-faint); margin-top: 6px; font-style: italic; }
+
+/* Competition */
+.comp-row {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px;
+}
+.comp-row:last-child { border-bottom: none; }
+.comp-name { color: var(--text); font-weight: 500; display: block; margin-bottom: 4px; }
+.comp-gap { color: var(--text-faint); font-size: 12px; }
+
+/* Features */
+.feature-name { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+.feature-desc { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+
+/* Footer */
+.rm-footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
