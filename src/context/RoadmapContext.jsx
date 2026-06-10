@@ -32,7 +32,7 @@ export function RoadmapProvider({ children }) {
       suggestions, setSuggestions,
       answers, setAnswers,
       roadmap, setRoadmap,
-      savedRoadmaps, saveRoadmap,
+      savedRoadmaps, setSavedRoadmaps, saveRoadmap,
       reset,
     }}>
       {children}
