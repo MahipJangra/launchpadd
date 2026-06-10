@@ -1,6 +1,6 @@
 # 🚀 Launchpad — Idea to Roadmap SaaS
 
-Turn any startup idea into a complete actionable roadmap using AI.
+Launchpad is an AI-powered SaaS platform that transforms startup ideas into structured business execution roadmaps through an interactive multi-step planning workflow.
 
 ---
 
