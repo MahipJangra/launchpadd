@@ -122,7 +122,7 @@ npm run build
 ---
 
 ## 📸 ScreenShots
-<img width="80%" height="auto" alt="Screenshot (187)" src="https://github.com/user-attachments/assets/7cea116a-26b0-48b8-a55f-d0f7b36bb991" />
+<img width="50%" height="auto" alt="Screenshot (187)" src="https://github.com/user-attachments/assets/7cea116a-26b0-48b8-a55f-d0f7b36bb991" />
 <img width="900" height="1080" alt="Screenshot (188)" src="https://github.com/user-attachments/assets/7036d333-315a-42b3-8d77-fdca07358855" />
 <img width="900" height="1080" alt="Screenshot (189)" src="https://github.com/user-attachments/assets/ef92553f-c906-4117-93ef-455fb2a23aab" />
 <img width="900" height="1080" alt="Screenshot (190)" src="https://github.com/user-attachments/assets/330fb6c1-10da-496d-9f73-f6abcc33c690" />
