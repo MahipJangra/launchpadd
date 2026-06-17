@@ -8,19 +8,25 @@ import "../styles/analyze.css";
 
 export default function Analyze() {
   const navigate = useNavigate();
-  // ✅ FIX 1: suggestions directly context se lo, useState hatao
   const { idea, questions, suggestions, answers, setAnswers, setRoadmap, saveRoadmap } = useRoadmap();
   const [currentQ, setCurrentQ] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [generating, setGenerating] = useState(false);
   const [customMode, setCustomMode] = useState(false);
+  const [ready, setReady] = useState(false);
   const inputRef = useRef();
 
   useEffect(() => {
-    if (!idea || questions.length === 0) navigate("/");
-  }, [idea, questions, navigate]);
-
-  // ✅ FIX 2: sessionStorage wali useEffect hatao - ab zaroorat nahi
+    // Small delay to let sessionStorage restore first
+    const timer = setTimeout(() => {
+      if (!idea || questions.length === 0) {
+        navigate("/");
+      } else {
+        setReady(true);
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (customMode && inputRef.current) inputRef.current.focus();
@@ -78,6 +84,15 @@ export default function Analyze() {
       setGenerating(false);
     }
   };
+
+  // Loading state while sessionStorage restores
+  if (!ready && !generating) {
+    return (
+      <div className="page center">
+        <div className="gen-icon pulse">⚡</div>
+      </div>
+    );
+  }
 
   if (generating) {
     return (
@@ -137,7 +152,6 @@ export default function Analyze() {
               </button>
             </div>
 
-            {/* Selected suggestion confirm */}
             {currentAnswer && !customMode && (
               <div className="selected-answer">
                 <span className="selected-text">"{currentAnswer}"</span>
@@ -179,7 +193,6 @@ export default function Analyze() {
           </div>
         )}
 
-        {/* Previous answers */}
         {currentQ > 0 && (
           <div className="prev-answers">
             <p className="prev-label">Previous answers:</p>
